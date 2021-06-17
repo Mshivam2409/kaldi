@@ -92,8 +92,8 @@ openfst-$(OPENFST_VERSION).tar.gz:
 	if [ -d "$(DOWNLOAD_DIR)" ]; then \
 	  cp -p "$(DOWNLOAD_DIR)/openfst-$(OPENFST_VERSION).tar.gz" .; \
 	else \
-	  $(WGET) -nv -T 10 -t 1 http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-$(OPENFST_VERSION).tar.gz || \
-	  $(WGET) -nv -T 10 -t 3 -c https://www.openslr.org/resources/2/openfst-$(OPENFST_VERSION).tar.gz; \
+	  $(WGET) -nv -t 1 http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-$(OPENFST_VERSION).tar.gz || \
+	  $(WGET) -nv -t 3 -c https://www.openslr.org/resources/2/openfst-$(OPENFST_VERSION).tar.gz; \
 	fi
 
 openfst_cleaned:
@@ -132,7 +132,7 @@ sctk-$(SCTK_GITHASH).tar.gz:
 	if [ -d '$(DOWNLOAD_DIR)' ]; then \
 	  cp -p '$(DOWNLOAD_DIR)/sctk-$(SCTK_GITHASH).tar.gz' .; \
 	else \
-	  $(WGET) -nv -T 10 -t 3 -O sctk-$(SCTK_GITHASH).tar.gz \
+	  $(WGET) -nv  -t 3 -O sctk-$(SCTK_GITHASH).tar.gz \
 	    https://github.com/usnistgov/SCTK/archive/$(SCTK_GITHASH).tar.gz; \
 	fi
 
@@ -165,7 +165,7 @@ sph2pipe-$(SPH2PIPE_VERSION).tar.gz:
 	  cp -p "$(DOWNLOAD_DIR)/sph2pipe-v$(SPH2PIPE_VERSION).tar.gz" \
 	        sph2pipe-$(SPH2PIPE_VERSION).tar.gz; \
 	else \
-	  $(WGET) -nv -T 10 -t 3 -O sph2pipe-$(SPH2PIPE_VERSION).tar.gz \
+	  $(WGET) -nv  -t 3 -O sph2pipe-$(SPH2PIPE_VERSION).tar.gz \
 	    https://github.com/burrmill/sph2pipe/archive/$(SPH2PIPE_VERSION).tar.gz; \
 	fi
 
@@ -183,7 +183,7 @@ cub-$(CUB_VERSION).tar.gz:
 	if [ -d "$(DOWNLOAD_DIR)" ]; then \
 	  cp -p "$(DOWNLOAD_DIR)/cub-$(CUB_VERSION).tar.gz" .; \
 	else \
-	  $(WGET) -nv -T 10 -t 3 -O cub-$(CUB_VERSION).tar.gz \
+	  $(WGET) -nv -t 3 -O cub-$(CUB_VERSION).tar.gz \
 	    https://github.com/NVlabs/cub/archive/$(CUB_VERSION).tar.gz; \
 	fi
 
